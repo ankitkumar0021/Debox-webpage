@@ -3,6 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
 .image-container {
   width: 100%;
   height: 600px;
@@ -16,27 +17,83 @@ body {
   height: auto;
   display: block;
 }
-
+.header {
+  display: flex;
+  justify-content: space-between;
+}
 .navbar {
   background-color: transparent;
-  position: relative;
   width: 100%;
   z-index: 2;
   background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar-nav .nav-link {
-  color: white;
+.navbar-brand {
+  margin-right: auto;
+  padding: 0;
+  text-decoration: none;
 }
 
-.navbar-nav .nav-item.dropdown.show .dropdown-toggle::after {
-  content: none;
+.navbar-brand img {
+  max-width: 100%;
 }
-.navbar-nav .nav-link:hover {
-  color: yellow;
-}
-/* Add this to your existing CSS */
 
+.navbar-toggler {
+  display: none;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  position: relative; /* Needed for dropdown */
+  color: #fff;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  cursor: pointer; /* Add cursor pointer for dropdown */
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  z-index: 1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #444;
+}
 .content {
   position: absolute;
   top: 50%;
@@ -67,41 +124,12 @@ body {
   height: 100px;
   margin-right: 10px;
 }
-.read {
-  height: 50px;
-  width: 100px;
-  border-radius: 30px;
-}
-.box {
-  width: 180px;
-  height: 180px;
-  color: #fff;
-  text-align: center;
-  margin: 10px;
-  padding: 20px;
-  border-radius: 5px;
-  border: 2px solid gray;
-}
 
-.box img {
-  max-width: 100%;
-  height: 100px;
-}
-
-.icon-heading h6 {
-  display: flex;
-  align-items: center;
-}
-
-.icon-heading img {
-  width: 16px;
-  height: 16px;
-  margin-right: 8px; /* Optional spacing between the image and text */
-}
+/* Add your other styles here */
 
 /* Styling for the footer */
 footer {
-  background-image: url('../images/Footer.jpg'); /* Replace 'your-footer-image.jpg' with your actual image path */
+  background-image: url('../images/Footer.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -118,7 +146,7 @@ footer {
 
 /* Styling for the content within the footer */
 .footer-content {
-  background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background to the content for readability */
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 5px;
 }
@@ -129,6 +157,7 @@ footer {
   padding: 0;
   margin: 0;
 }
+
 .yellow-bg {
   background-color: #eead01;
   padding: 20px;
@@ -155,3 +184,15 @@ img {
   max-height: 100%;
 }
 
+.icon-heading h6 {
+  display: flex;
+  align-items: center;
+}
+
+.icon-heading img {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+/* Your other styles go here */
